@@ -81,30 +81,61 @@ console.log('Testing find(5, [])', find(5, []));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string.at(0)) {
+    return true;
+  }
+  return false;
 }
-
+console.log('Testing isFirstLetter with H and Hello World', isFirstLetter('H', 'Hello World'));
+console.log('Testing isFirstLetter with h and Hello World', isFirstLetter('h', 'Hello World'));
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
   // TODO: return the sum
+  return sum;
 }
+console.log('Testing sumAll with [1, 3, 7, -2, 0]', sumAll([1, 3, 7, -2, 0]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
-
+function allPositive(inputArray) {
+  const outputArray = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] > 0) {
+      outputArray.push(inputArray[i]);
+    } // end if
+  } // end loop over array
+  return outputArray;
 }
+console.log('Testing allPositive with [1, 3, 7, -2, 0, 5]', allPositive([1, 3, 7, -2, 0, 5]));
+console.log('Testing allPositive with [0, -5]', allPositive([0, -5]));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
 
+// Create a function that takes a number as an argument. Add up all the numbers
+// from 1 to the number you passed to the function. For example, if the input is
+// 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10. Expect any
+// positive number between 1 and 1000.
+function addUp(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+}
+console.log('Testing addUp(4)', addUp(4));
+console.log('Testing addUp(1)', addUp(1));
+console.log('Testing addUp(13)', addUp(13));
+console.log('Testing addUp(600)', addUp(600));
 
 // DO NOT MODIFY
 // Used for automated testing
